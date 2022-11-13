@@ -1,2 +1,5 @@
-# -bootcamp-potencial-net-developer-dio-mvc
-Projeto front-end com mvc usando c#
+# bootcamp-potencial-net-developer-dio-mvc
+
+Nesse projeto criamos um frontend com MVC.
+
+ 
