@@ -1,13 +1,15 @@
-using ModuloAPI.Context;
+using bootcamp_potencial_net_developer_dio_mvc.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //Conexão com banco de dados
-var connString = builder.Configuration.GetConnectionString("ConexaoMySQL");
-var serverVersion = new MySqlServerVersion("8.0");
-
-builder.Services.AddDbContext(options => options.UseMySql(connString, serverVersion));
+builder.Services.AddDbContext<Context>(options =>
+  options.UseMySql(
+    builder.Configuration.GetConnectionString("ConexaoMySQL"),
+    new MySqlServerVersion("8.0")
+  )
+);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
