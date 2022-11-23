@@ -1,0 +1,62 @@
+@model IEnumerable<bootcamp_potencial_net_developer_dio_mvc.Models.Contato>
+
+@{
+  ViewData["Title"] = "Listagem de contatos";
+}
+
+<h2>Contatos</h2>
+
+<p>
+  <a asp-action="Criar">Novo Contato</a>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.ID)
+      </th>
+
+      <th>
+        @Html.DisplayNameFor(model => model.Nome)
+      </th>
+
+      <th>
+        @Html.DisplayNameFor(model => model.Telefone)
+      </th>
+
+      <th>
+        @Html.DisplayNameFor(model => model.Ativo)
+      </th>
+
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        @Html.DisplayNameFor(model => model.ID)
+      </td>
+
+      <td>
+        @Html.DisplayNameFor(model => model.Nome)
+      </td>
+
+      <td>
+        @Html.DisplayNameFor(model => model.Telefone)
+      </td>
+
+      <td>
+        @Html.DisplayNameFor(model => model.Ativo)
+      </td>
+
+      <td>
+        <a asp-action="Editar" asp-route-id="model.ID">Editar</a>
+        <a asp-action="Detalhes" asp-route-id="model.ID">Detalhes</a>
+        <a asp-action="Deletar" asp-route-id="model.ID">Deletar</a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
