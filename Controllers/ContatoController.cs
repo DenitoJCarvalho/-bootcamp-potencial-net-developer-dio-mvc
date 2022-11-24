@@ -49,5 +49,64 @@ namespace bootcamp_potencial_net_developer_dio_mvc.Controllers
     }
 
     #endregion
+
+    #region Edição
+    public IActionResult Editar(int Id)
+    {
+      var contato = _context.Contatos.Find(Id);
+
+      if (contato == null)
+      {
+        return NotFound();
+      }
+      return View(contato);
+    }
+
+    [HttpPost]
+    public IActionResult Editar(bootcamp_potencial_net_developer_dio_mvc.Models.Contato contato)
+    {
+      var contatoBanco = _context.Contatos.Find(contato.ID);
+      contatoBanco.Nome = contato.Nome;
+      contatoBanco.Telefone = contato.Telefone;
+      contatoBanco.Ativo = contato.Ativo;
+
+      _context.Contatos.Update(contatoBanco);
+      _context.SaveChanges();
+
+      return RedirectToAction(nameof(Index));
+    }
+    #endregion
+
+    #region Detalhes
+    public IActionResult Detalhes(int Id)
+    {
+      var contato = _context.Contatos.Find(Id);
+
+      if (contato is null)
+      {
+        return RedirectToAction(nameof(Index));
+      }
+      else
+      {
+        return View(contato);
+      }
+    }
+    #endregion
+
+    #region Deletar
+    public IActionResult Deletar(int Id)
+    {
+      var contato = _context.Contatos.Find(Id);
+
+      if (contato is null)
+      {
+        return RedirectToAction(nameof(Index));
+      }
+      else
+      {
+        return View(contato);
+      }
+    }
+    #endregion
   }
 }
