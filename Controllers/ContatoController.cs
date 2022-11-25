@@ -107,6 +107,17 @@ namespace bootcamp_potencial_net_developer_dio_mvc.Controllers
         return View(contato);
       }
     }
+
+    [HttpPost]
+    public IActionResult Deletar(bootcamp_potencial_net_developer_dio_mvc.Models.Contato contato)
+    {
+      var contatoBanco = _context.Contatos.Find(contato.ID);
+
+      _context.Contatos.Remove(contatoBanco);
+      _context.SaveChanges();
+
+      return RedirectToAction(nameof(Index));
+    }
     #endregion
   }
 }

@@ -11,11 +11,27 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar-collapse collapse d-sm-inline-flex justify-content-between menu">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Contato" asp-action="Index">
+                        Início
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    <footer>
+        <small>
+            Projeto Bootcamp Pottencial da Dio - Aluno Desenvolvedor: <strong>Dennis J Carvalho</strong>
+        </small>
+    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
